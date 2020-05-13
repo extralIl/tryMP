@@ -1,0 +1,27 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url其实还可以设置时区
+    url: jdbc:mysql://60.205.214.42:3306/try_mybatis_plus?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: jiweihao
+
+logging:
+  level:
+    com.extra.demo.mptest.mapper: trace
+
+
+
+mybatis-plus:
+
+
+  global-config:
+    db-config:
+      #  配置逻辑删除
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      # 全局主键策略
+      id-type: id_worker
+  #  mapper.xml文件位置
+  mapper-locations: classpath:mapper/mptest/*.xml
